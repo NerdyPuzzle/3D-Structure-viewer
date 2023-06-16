@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Launcher extends JavaPlugin {
 
-	public static final Logger LOG = LogManager.getLogger("GeckoLib Plugin");
+	public static final Logger LOG = LogManager.getLogger("Structure viewer Plugin");
 	public static PluginActions ACTION_REGISTRY;
 
 	public Launcher(Plugin plugin) {
