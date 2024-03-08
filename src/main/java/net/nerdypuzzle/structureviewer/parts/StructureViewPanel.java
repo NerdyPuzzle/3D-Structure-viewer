@@ -14,7 +14,7 @@ public class StructureViewPanel extends ViewBase {
     public StructureViewPanel(MCreator mcreator, String name, File nbt, int width, int height) {
         super(mcreator);
         this.name = name;
-        panel = new ScenePanel(nbt, width, height);
+        panel = new ScenePanel(nbt, width, height, mcreator);
         this.add(PanelUtils.totalCenterInPanel(panel));
     }
 
