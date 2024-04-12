@@ -116,6 +116,8 @@ public class ScenePanel extends JFXPanel {
          Tag root = null;
          CompoundTag tag = null;
 
+         String modid = mcreator.getWorkspace().getWorkspaceSettings().getModID();
+
          try {
              FileInputStream fis = new FileInputStream(file);
              NBTInputStream nbt = new NBTInputStream(fis);
@@ -166,6 +168,16 @@ public class ScenePanel extends JFXPanel {
                      String key = getKeyForValue(mapping, value);
                      if (key != null) {
                          Color avgColor = getAverageColor(toBufferedImage(MCItem.getBlockIconBasedOnName(mcreator.getWorkspace(), key).getImage()));
+                         PhongMaterial material = new PhongMaterial(avgColor);
+                         box.setMaterial(material);
+                     }
+                 } else if (value.contains(modid)) {
+                     final String regname = value.replace(modid + ":", "");
+                     if (mcreator.getWorkspace().getWorkspaceInfo().hasElementsOfBaseType("block")) {
+                         Color avgColor = getAverageColor(toBufferedImage(
+                         mcreator.getWorkspace().getModElements().parallelStream().filter((modElement -> {
+                             return modElement.getRegistryName().equals(regname);
+                         })).findFirst().get().getElementIcon().getImage()));
                          PhongMaterial material = new PhongMaterial(avgColor);
                          box.setMaterial(material);
                      }
