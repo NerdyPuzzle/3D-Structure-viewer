@@ -1,8 +1,10 @@
 {
   "id": "structure_viewer",
-  "minversion": 202300217118,
   "weight": 3001,
   "javaplugin": "net.nerdypuzzle.structureviewer.Launcher",
+  "supportedversions": [
+    202400115713
+  ],
   "info": {
     "name": "3D Structure viewer",
     "version": "1.2",
