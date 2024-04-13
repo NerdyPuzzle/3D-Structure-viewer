@@ -3,11 +3,12 @@
   "weight": 3001,
   "javaplugin": "net.nerdypuzzle.structureviewer.Launcher",
   "supportedversions": [
-    202400115713
+    202400115713,
+    202400115821
   ],
   "info": {
     "name": "3D Structure viewer",
-    "version": "1.2",
+    "version": "1.2.1",
     "author": "NerdyPuzzle"
   }
 }
